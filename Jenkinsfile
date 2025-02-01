@@ -9,6 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                // Clean before build
+                cleanWs()
                 git branch: 'main', url: 'https://github.com/sonusharma85indore/jenkins-terraform-pipeline-ec2.git'
             }
         }
